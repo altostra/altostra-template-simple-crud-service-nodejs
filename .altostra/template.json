@@ -1,0 +1,19 @@
+{
+  /* This is a template of a template.
+   * When initializing new repository from this one, You must do the following:
+   *
+   * Set the 'name' field to an actual meaningful name
+   * Set the 'description' field with a good description of what this project-template is
+   * Place a single valid blueprint in the 'blueprints' array
+   * Optionally, add glob patterns to the 'includes' and/or 'excludes' arrays
+   *  Please note, you must use only globs for files (not directories)
+   *  If you wish to include/exclude all files in a directory, use '**'
+   *    BAD glob pattern: "/files-dir"
+   *    GOOD glob pattern: "/files-dir/**"
+   */
+  "name": "A template template",
+  "description": "This is a template of a template.",
+  "blueprints": [],
+  "includes": [],
+  "excludes": []
+}
