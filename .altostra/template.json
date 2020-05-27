@@ -5,7 +5,9 @@
     "/functions/**",
     "/package*.json",
     "/.altoignore",
-    "/.gitignore"
+    "/.gitignore",
+    "/README.md",
+    "/LICENSE"
   ],
   "excludes": [],
   "blueprints": [
