@@ -1,26 +1,20 @@
-# A template for Altostra's project templates 
+# Simple CRUD Service Template
 
-> WE HAVE TO GO DEEPER
+Use this template to create a simple CRUD service with an API, a function and a table.
+You can then change and extend it to fit your requirements.
 
-When initializing new repository from this one, You must do the following:
+## Cloud Resources
+* A REST-API
+* Handler Function
+* Data Table
 
-* Edit `.altostra/template.json` as described:
-  * Set the `name` field to an actual meaningful name.
-  * Set the `description` field with a good description of what 
-this project-template is.
-  * Place a single valid *blueprint* in the `blueprints` array
-  * Optionally, add *glob* patterns to the `includes` and/or `excludes` arrays.  
-**Please note** the relevant section reagarding `template.json` glob patterns.
-* Add whatever additional files you'd like.  
-Don't forget to update the `includes`/`excludes` field in your `template.json` 
-accordingly.
-* Edit the `README.md` file - so it would descrive **your** template.
+## Source Files
+The sources are located in the `functions` directory.
 
-### `template.json` glob patterns
+## How to use this template
+From an existing empty directory run:
+```sh
+$ alto init --template crud-service
+```
 
-You must use only globs for files (not directories)  
-If you wish to include/exclude all files in a directory, use *star pattern* `**`
-* **BAD** glob pattern: `/files-dir`
-* **GOOD** glob pattern: `/files-dir/**`
-
-
+You can also apply the template to an existing Altostra project from Visual Studio Code by going to the Altostra view in the main toolbar and clickign on "CRUD Service" in the templates list.
