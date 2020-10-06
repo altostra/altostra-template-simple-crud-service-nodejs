@@ -1,12 +1,23 @@
 {
   "name": "simple-crud-service",
   "version": "1.0.0",
-  "description": "",
+  "description": "Use this template to create a simple CRUD service with an API, a function and a table. You can then change and extend it to fit your requirements.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "alto build",
+    "push": "alto push",
+    "deploy": "alto deploy"
   },
   "keywords": [],
   "author": "Altostra, Inc",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altostra/altostra-template-simple-crud-service-nodejs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/altostra/altostra-template-simple-crud-service-nodejs/issues"
+  },
+  "homepage": "https://github.com/altostra/altostra-template-simple-crud-service-nodejs#readme"
 }
