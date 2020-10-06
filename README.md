@@ -67,19 +67,20 @@ The sources are located in the `functions` directory.
 ## Running and debugging
 
 To run the function locally you'll have to create a dynamo-db table by deploying the project, then:
-- Run `alto console`
-- Select the deployment
-- Click on the `Open in AWS Console` button of the latest version
-- Go to the `Resources` tab
-- Filter to `Table01` and click on the *Logical ID* of the table Resource
-- Copy its *Table name*
+1. Run `alto build`
+1. Run `alto console`
+1. Select the deployment
+1. Click on the `Open in AWS Console` button of the latest version
+1. Go to the `Resources` tab
+1. Filter to `Table01` and click on the *Physical ID* of the table resource
+1. Copy its *Table name*
 
 For brevity, we assume it is called `Table01-1`.
 
 ### *Nix
 
 #### Running
-To run a local HTTP API that invokes the functin for the appropriate HTTP calls run
+To run a local HTTP API that invokes the function for the appropriate HTTP calls run
 ```shell
 TABLE_DATA01="Table01-1" sam local start-api -t sam-template.json
 ```
@@ -96,7 +97,7 @@ would connect to `localhost:5000`.
 ### Windows PowerShell 
 
 #### Running
-To run a local HTTP API that invokes the functin for the appropriate HTTP calls run
+To run a local HTTP API that invokes the function for the appropriate HTTP calls run
 ```shell
 $ENV:TABLE_DATA01="Table01-1" 
 sam local start-api -t sam-template.json -d 5000
@@ -114,7 +115,7 @@ would connect to `localhost:5000`.
 ### Windows CMD
 
 #### Running
-To run a local HTTP API that invokes the functin for the appropriate HTTP calls run
+To run a local HTTP API that invokes the function for the appropriate HTTP calls run
 ```shell
 SET "TABLE_DATA01=Table01-1" 
 sam local start-api -t sam-template.json
