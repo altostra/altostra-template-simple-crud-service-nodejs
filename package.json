@@ -11,13 +11,5 @@
   },
   "keywords": [],
   "author": "Altostra, Inc",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/altostra/altostra-template-simple-crud-service-nodejs.git"
-  },
-  "bugs": {
-    "url": "https://github.com/altostra/altostra-template-simple-crud-service-nodejs/issues"
-  },
-  "homepage": "https://github.com/altostra/altostra-template-simple-crud-service-nodejs#readme"
+  "license": "MIT"
 }
