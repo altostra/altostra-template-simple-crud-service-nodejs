@@ -18,7 +18,7 @@ npm install -g @altostra/cli
 ### 3. Connect an a AWS account
 To connect an AWS account, click **Connect Cloud Account** on the [Web Console settings](https://app.altostra.com/settings) page.
 
-> If you don't wish to connect your account just yet, you can deploy to the [Playground](https://docs.altostra.com/reference/concepts/playground-environment.html) environment—in the tutorial below—that simulates the cloud without creating actual resources.
+> If you don't wish to connect your account just yet, you can deploy to the [Playground](https://docs.altostra.com/reference/concepts/playground-environment.html) environment that simulates the cloud without creating actual resources.
 
 ## Using the template
 
