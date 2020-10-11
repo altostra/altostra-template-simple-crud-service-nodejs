@@ -1,131 +1,98 @@
-# Simple CRUD Service Template
+# Simple CRUD Service Template - Node.js
 
-Use this template to create a simple CRUD service with an API, a function and a table.
-You can then change and extend it to fit your requirements.
+This is a template for a simple CRUD service with an API, a function and a table.
+After you create a project from this template, change and extend it to fit your
+specific requirements.
 
-## Getting started
+## Before you begin
 
-## Things you'll need for this tutorial
-1. An Altostra Account (Don't have one yet? Just [login](https://app.altostra.com) here)
-1. Altostra CLI installed (`npm i -g @altostra/cli` or [see docs](../reference/CLI/altostra-cli.html#installation))
-1. Altostra Tools extension for Visual Studio Code ([VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=Altostra.altostra) or [see docs](../getting-started/installation.html#install-the-visual-studio-code-extension))
-1. A connected AWS cloud account ( [Web Console settings](https://app.altostra.com/settings)  or [see docs](../getting-started/connect-your-accounts.html#connect-your-cloud-service-accounts))
-1. An Environment connected to your AWS Account ([Web Console environments](https://app.altostra.com/environments) or [see docs](../howto/envs/manage-environments.html)) - We'll call it `Dev` for berevity, but you can pick any of your environments
+### 1. Create a free Altostra account
+To create an account, simply login to the [Altostra Web Console](https://app.altostra.com).
 
-To debug your function you'll also need to install SAM-CLI by following
-[its installation instructions](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html).
+### 2. Install the Altostra CLI
+```sh
+# make sure you have Node.js 10 or above installed
+npm install -g @altostra/cli
+```
 
+### 3. Connect an a AWS account
+To connect an AWS account, click **Connect Cloud Account** on the [Web Console settings](https://app.altostra.com/settings) page.
+
+> If you don't wish to connect your account just yet, you can deploy to the [Playground](https://docs.altostra.com/reference/concepts/playground-environment.html) environment—in the tutorial below—that simulates the cloud without creating actual resources.
 
 ## Using the template
 
-You have several options to get started with this template.  
-Either go to the Altostra Web Console and create a new project.  
-When asked to use a template, select "static-website".
+You have several options to get started with this template:
+* Initialize a new project from the Altostra CLI and specify the template:
 
-Alternatively, you can use the Altostra CLI to initialize a new project from the template by running:
 ```sh
-$ alto init --template static-website
+mkdir simple-crud-service
+cd simple-crud-service
+alto init --template simple-crud-service-nodejs
 ```
 
-You can also apply the template to an existing Altostra project from Visual Studio Code by going
-to the Altostra view in the main toolbar and clickign on "static-website" in the templates list.
+* Create a new project from the [Altostra Web Console](https://app.altostra.com/projects), you can select the `simple-crud-service-nodejs` template from the list.
 
-### Project deployment
+* Apply the template to an existing Altostra project from Visual Studio Code by going to the Altostra view in the main toolbar and clicking on `simple-crud-service-nodejs` in the templates list.
 
-Run the following commands to create a deployment image of the project and deploy it as a new instance.
+## Deploying the project
 
-For more information on each command refer to the [Altostra CLI docs](https://docs.altostra.com/reference/CLI/altostra-cli.html).
-
-1. Create an
-[image](https://docs.altostra.com/howto/projects/deploy-project.html#create-a-project-image)
-from the project:
-```shell
-$ altos push v1.0
-```
-2. Deploy the image to a new deployment named `main` in the `Dev` environment:
-```shell
-$ alto deploy main:v1.0 --new Dev
-```
-3. Manage the project in the Altostra Web Console:
-```shell
-$ alto console
+Start by logging in from the Altostra CLI:
+```sh
+alto login
 ```
 
-> To update an existing deployment with new images just omit the `--new` flag and environment name:
-> ```shell
-> $ alto deploy main:v2.0
->```
+>The deployment process is simple and involves a few commands.
+>For more information on each command refer to the [Altostra CLI documentation](https://docs.altostra.com/reference/CLI/altostra-cli.html).
 
-## Content
-* A REST-API
-* Handler Function
+Create an [image](https://docs.altostra.com/howto/projects/deploy-project.html#create-a-project-image) of the project:
+```sh
+alto push v1.0
+```
+
+Deploy the image as a new
+[deployment](https://docs.altostra.com/reference/concepts/deployments.html) named `main` in the `Dev` environment:
+```sh
+alto deploy main:v1.0 --new Dev # omit "--new Dev" to update rather than create
+```
+
+## View the deployment status and details
+You have two options, list the deployment details in the terminal or open the Web Console.
+
+* Using the Altostra CLI:
+```sh
+alto deployments # list the deployments for the current project
+```
+```sh
+alto deployments main # show details for the deployment "main"
+```
+
+* Using the Web Console:
+```sh
+alto console # will open the Web Console for the current project
+```
+
+## Modifying the project
+To modify the project, install [Altostra Tools](https://marketplace.visualstudio.com/items?itemName=Altostra.altostra) for Visual Studio Code:
+
+From the terminal:
+```sh
+code --install-extension Altostra.altostra
+```
+
+or, search for Altostra Tools in the Visual Studio Code extensions view.
+
+or, directly from the [marketplace](https://marketplace.visualstudio.com/items?itemName=Altostra.altostra).
+
+The extension adds an Altostra panel and visual additor that help you modify and
+design the project infrastructure.
+
+## Template content
+
+### Cloud resources
+* REST-API
+* Functions (Node.js runtime)
 * Data Table
 
-## Source Files
-The sources are located in the `functions` directory.
-
-## Running and debugging
-
-To run the function locally you'll have to create a dynamo-db table by deploying the project, then:
-1. Run `alto build`
-1. Run `alto console`
-1. Select the deployment
-1. Click on the `Open in AWS Console` button of the latest version
-1. Go to the `Resources` tab
-1. Filter to `Table01` and click on the *Physical ID* of the table resource
-1. Copy its *Table name*
-
-For brevity, we assume it is called `Table01-1`.
-
-### *Nix
-
-#### Running
-To run a local HTTP API that invokes the function for the appropriate HTTP calls run
-```shell
-TABLE_DATA01="Table01-1" sam local start-api -t sam-template.json
-```
-
-#### Debugging
-To debug the function we can run
-```shell
-TABLE_DATA01="Table01-1" sam local start-api -t sam-template.json -d 5000
-```
-After every call to the API, the function would load then wait until a debugger
-would connect to `localhost:5000`.
-
-
-### Windows PowerShell 
-
-#### Running
-To run a local HTTP API that invokes the function for the appropriate HTTP calls run
-```shell
-$ENV:TABLE_DATA01="Table01-1" 
-sam local start-api -t sam-template.json -d 5000
-```
-
-#### Debugging
-To debug the function we can run
-```shell
-$ENV:TABLE_DATA01="Table01-1" 
-sam local start-api -t sam-template.json
-```
-After every call to the API, the function would load then wait until a debugger
-would connect to `localhost:5000`.
-
-### Windows CMD
-
-#### Running
-To run a local HTTP API that invokes the function for the appropriate HTTP calls run
-```shell
-SET "TABLE_DATA01=Table01-1" 
-sam local start-api -t sam-template.json
-```
-
-#### Debugging
-To debug the function we can run
-```shell
-SET "TABLE_DATA01=Table01-1" 
-sam local start-api -t sam-template.json -d 5000
-```
-After every call to the API, the function would load then wait until a debugger
-would connect to `localhost:5000`.
+### Source files
+The source files are located in the `functions` directory.
