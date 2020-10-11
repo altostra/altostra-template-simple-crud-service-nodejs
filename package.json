@@ -1,13 +1,11 @@
 {
   "name": "simple-crud-service",
   "version": "1.0.0",
-  "description": "Use this template to create a simple CRUD service with an API, a function and a table. You can then change and extend it to fit your requirements.",
+  "description": "Simple CRUD service Altostra template.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "alto build",
-    "push": "alto push",
-    "deploy": "alto deploy"
+    "build": "alto build"
   },
   "keywords": [],
   "author": "Altostra, Inc",
