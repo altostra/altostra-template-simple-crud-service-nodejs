@@ -12,7 +12,7 @@ To create an account, simply login to the [Altostra Web Console](https://app.alt
 ### 2. Install the Altostra CLI
 ```sh
 # make sure you have Node.js 10 or above installed
-npm install -g @altostra/cli
+$ npm install -g @altostra/cli
 ```
 
 ### 3. Connect an a AWS account
@@ -26,9 +26,9 @@ You have several options to get started with this template:
 * Initialize a new project from the Altostra CLI and specify the template:
 
 ```sh
-mkdir simple-crud-service
-cd simple-crud-service
-alto init --template simple-crud-service-nodejs
+$ mkdir simple-crud-service
+$ cd simple-crud-service
+$ alto init --template simple-crud-service-nodejs
 ```
 
 * Create a new project from the [Altostra Web Console](https://app.altostra.com/projects), you can select the `simple-crud-service-nodejs` template from the list.
@@ -39,7 +39,7 @@ alto init --template simple-crud-service-nodejs
 
 Start by logging in from the Altostra CLI:
 ```sh
-alto login
+$ alto login
 ```
 
 >The deployment process is simple and involves a few commands.
@@ -47,14 +47,14 @@ alto login
 
 Create an [image](https://docs.altostra.com/howto/projects/deploy-project.html#create-a-project-image) of the project:
 ```sh
-alto push v1.0
+$ alto push v1.0
 ```
 
 Deploy the image as a new
 [deployment](https://docs.altostra.com/reference/concepts/deployments.html) named `main` in the `Production` environment:
 ```sh
 # omit "--new Production" to update rather than create
-alto deploy main:v1.0 --new Production
+$ alto deploy main:v1.0 --new Production
 ```
 
 ## View the deployment status and details
@@ -63,17 +63,16 @@ You have two options, list the deployment details in the terminal or open the We
 * Using the Altostra CLI:
 ```sh
 # list the deployments for the current project
-alto deployments
-```
-```sh
+$ alto deployments
+
 # show details for the deployment "main"
-alto deployments main
+$ alto deployments main
 ```
 
 * Using the Web Console:
 ```sh
 # will open the Web Console for the current project
-alto console
+$ alto console
 ```
 
 ## Modifying the project
@@ -81,7 +80,7 @@ To modify the project, install Altostra Tools for Visual Studio Code:
 
 From the terminal:
 ```sh
-code --install-extension Altostra.altostra
+$ code --install-extension Altostra.altostra
 ```
 
 or, search for Altostra Tools in the Visual Studio Code extensions view.
