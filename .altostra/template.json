@@ -1,4 +1,5 @@
 {
+  "type": "altostra",
   "name": "Simple CRUD Service",
   "description": "A simple CRUD service template",
   "includes": [
