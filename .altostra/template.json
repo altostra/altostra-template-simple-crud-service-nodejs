@@ -78,8 +78,9 @@
       "resources": {
         "Api01": {
           "cors": {
-            "type": "api.cors.none"
-          },
+						"type": "api.cors.simple",
+						"origins": "*"
+					},
           "endpoints": [
             {
               "id": "ApiEndpoint01",
